@@ -43,11 +43,21 @@ namespace Calculator
             d7Button.Click += NumberButton_Click;
             d8Button.Click += NumberButton_Click;
             d9Button.Click += NumberButton_Click;
+            dotButton.Click += DotButton_Click;
 
             addButton.Click         += OperationButton_Click;
             subtractButton.Click    += OperationButton_Click;
             multiplyButton.Click    += OperationButton_Click;
             divideButton.Click      += OperationButton_Click;
+        }
+
+        private void DotButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Add a dot only if there is not already one present.
+            if (! resultLabel.Content.ToString()!.Contains('.'))
+            {
+                resultLabel.Content = $"{resultLabel.Content}.";
+            }
         }
 
         private void OperationButton_Click(object sender, RoutedEventArgs e)
