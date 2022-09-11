@@ -112,7 +112,7 @@ namespace Calculator
             {
                 if (selectedOperator != null)
                 {
-                    resultLabel.Content = selectedOperator(lastNumber, lastNumber * number / 100);
+                    resultLabel.Content = selectedOperator(lastNumber, number / 100);
                     selectedOperator = null;
                 }
             }

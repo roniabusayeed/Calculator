@@ -7,11 +7,6 @@
         mc:Ignorable="d"
         Title="Calculator" Height="515" Width="350">
 
-    <Window.Resources>
-        <SolidColorBrush x:Key="numbersColor" Color="#666666"/>
-        <SolidColorBrush x:Key="operatorsColor" Color="Orange"/>
-    </Window.Resources>
-    
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -35,127 +30,112 @@
                Content="0"
                HorizontalContentAlignment="Right"
                VerticalContentAlignment="Bottom"
-               FontSize="60"
                x:Name="resultLabel"/>
         
         <Button Content="AC"
                 Grid.Row="1"
                 Grid.Column="0"
-                Margin="5"
-                x:Name="acButton"/>
+                x:Name="acButton"
+                Style="{StaticResource specialButtonStyle}"/>
         <Button Content="+/-"
                 Grid.Row="1"
                 Grid.Column="1"
-                Margin="5"
-                x:Name="negativeButton"/>
+                x:Name="negativeButton"
+                Style="{StaticResource specialButtonStyle}"/>
         <Button Content="%"
                 Grid.Row="1"
                 Grid.Column="2"
-                Margin="5"
-                x:Name="percentageButton"/>
+                x:Name="percentageButton"
+                Style="{StaticResource specialButtonStyle}"/>
         <Button Content="/"
                 Grid.Row="1"
                 Grid.Column="3"
-                Margin="5"
                 x:Name="divideButton"
-                Background="{StaticResource operatorsColor}"/>
+                Style="{StaticResource operatorButtonStyle}"/>
 
         
         <Button Content="7"
                 Grid.Row="2"
                 Grid.Column="0"
-                Margin="5"
                 x:Name="d7Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"
+                />
         <Button Content="8"
                 Grid.Row="2"
                 Grid.Column="1"
-                Margin="5"
                 x:Name="d8Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"
+                />
         <Button Content="9"
                 Grid.Row="2"
                 Grid.Column="2"
-                Margin="5"
                 x:Name="d9Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="x"
                 Grid.Row="2"
                 Grid.Column="3"
-                Margin="5"
                 x:Name="multiplyButton"
-                Background="{StaticResource operatorsColor}"/>
+                Style="{StaticResource operatorButtonStyle}"/>
 
         
         <Button Content="4"
                 Grid.Row="3"
                 Grid.Column="0"
-                Margin="5"
                 x:Name="d4Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="5"
                 Grid.Row="3"
                 Grid.Column="1"
-                Margin="5"
                 x:Name="d5Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="6"
                 Grid.Row="3"
                 Grid.Column="2"
-                Margin="5"
                 x:Name="d6Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="-"
                 Grid.Row="3"
                 Grid.Column="3"
-                Margin="5"
                 x:Name="subtractButton"
-                Background="{StaticResource operatorsColor}"/>
+                Style="{StaticResource operatorButtonStyle}"/>
 
         <Button Content="1"
                 Grid.Row="4"
                 Grid.Column="0"
-                Margin="5"
                 x:Name="d1Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="2"
                 Grid.Row="4"
                 Grid.Column="1"
-                Margin="5"
                 x:Name="d2Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="3"
                 Grid.Row="4"
                 Grid.Column="2"
-                Margin="5"
                 x:Name="d3Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="+"
                 Grid.Row="4"
                 Grid.Column="3"
-                Margin="5"
                 x:Name="addButton"
-                Background="{StaticResource operatorsColor}"/>
+                Style="{StaticResource operatorButtonStyle}"/>
 
         
         <Button Content="0"
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                Margin="5"
                 x:Name="d0Button"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="."
                 Grid.Row="5"
                 Grid.Column="2"
-                Margin="5"
                 x:Name="dotButton"
-                Background="{StaticResource numbersColor}"/>
+                Style="{StaticResource numberButtonStyle}"/>
         <Button Content="="
                 Grid.Row="5"
                 Grid.Column="3"
-                Margin="5"
                 x:Name="equalsButton"
-                Background="{StaticResource operatorsColor}"/>
+                Style="{StaticResource operatorButtonStyle}"/>
     </Grid>
 </Window>
