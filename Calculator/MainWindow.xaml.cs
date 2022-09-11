@@ -2,6 +2,8 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -108,8 +110,11 @@ namespace Calculator
         {
             if (double.TryParse(resultLabel.Content.ToString(), out double number))
             {
-                number /= 100;
-                resultLabel.Content = number.ToString();
+                if (selectedOperator != null)
+                {
+                    resultLabel.Content = selectedOperator(lastNumber, lastNumber * number / 100);
+                    selectedOperator = null;
+                }
             }
         }
 
