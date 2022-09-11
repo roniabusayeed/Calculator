@@ -37,7 +37,7 @@
                 Grid.Column="0"
                 Margin="5"
                 x:Name="acButton"/>
-        <Button Content="+/1"
+        <Button Content="+/-"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="5"
