@@ -16,8 +16,6 @@ using System.Windows.Shapes;
 
 namespace Calculator
 {
-    public delegate double BinaryOperator(double lhs, double rhs);
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -52,11 +50,6 @@ namespace Calculator
             divideButton.Click      += OperationButton_Click;
         }
 
-        private double Add(double a, double b) { return a + b; }
-        private double Subtract(double a, double b) { return a - b; }
-        private double Multiply(double a, double b) { return a * b; }
-        private double Divide(double a, double b) { return a / b; }
-
         private void OperationButton_Click(object sender, RoutedEventArgs e)
         {
             // Save currently displayed number and reset result label to zero.
@@ -66,10 +59,10 @@ namespace Calculator
             }
             
             // Save selected operator.
-            if (sender == addButton) { selectedOperator = Add; }
-            else if (sender == subtractButton) { selectedOperator = Subtract; }
-            else if (sender == multiplyButton) { selectedOperator = Multiply; }
-            else if (sender == divideButton) { selectedOperator = Divide; }
+            if (sender == addButton) { selectedOperator = SimpleMath.Add; }
+            else if (sender == subtractButton) { selectedOperator = SimpleMath.Subtract; }
+            else if (sender == multiplyButton) { selectedOperator = SimpleMath.Multiply; }
+            else if (sender == divideButton) { selectedOperator = SimpleMath.Divide; }
         }
 
         private void NumberButton_Click(object sender, RoutedEventArgs e)
@@ -96,6 +89,7 @@ namespace Calculator
                 if (selectedOperator is not null)
                 {
                     resultLabel.Content = selectedOperator(lastNumber, number);
+                    selectedOperator = null;
                 }
             }
         }
